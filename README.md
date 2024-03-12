@@ -2,10 +2,7 @@
 
 :fire::fire:**[CVPR 2024]** The official implementation of the paper "[ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions](todo)"
 
-:fire::fire:`Welcome to our repository please star and follow us. Expect regular updates and fresh content as we continue to grow and improve! `:star::star::star::blush::blush: 
-
-
-|[Paper](https://arxiv.org/abs/2205.08534) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) | [检测排名图paperwithcode]() |[分割排名图paperwithcode]()|
+:fire::fire:**\[Guidelines\]**|[Paper](https://arxiv.org/abs/2205.08534) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) | [检测排名图paperwithcode]() |[分割排名图paperwithcode]()|
 
  <div align=center> <img title='vit-comer' src="/img/vit-comer-0312-2.png"> </div>
 
