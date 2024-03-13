@@ -44,7 +44,7 @@ We present a plain, pre-training-free, and feature-enhanced ViT backbone with Co
 - [ ] release detection/segementation code
 - [ ] release beit3/dino weights
 
- 
+
 ## Quick Start
 **Enveriment**. First install [MMDetection v2.22.0](https://github.com/open-mmlab/mmdetection/tree/v2.22.0). Then install the following package.
 
