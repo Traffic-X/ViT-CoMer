@@ -46,9 +46,14 @@ We present a plain, pre-training-free, and feature-enhanced ViT backbone with Co
 
  
 ## Quick Start
-**Enveriment**
+**Enveriment**. First install [MMDetection v2.22.0](https://github.com/open-mmlab/mmdetection/tree/v2.22.0). Then install the following package.
+
 ```
-pip install -r req.txt
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+pip install mmcv-full==1.4.2 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
+pip install timm==0.4.12
+pip install mmdet==2.22.0
+cd ops & sh make.sh # compile deformable attention
 ```
 **Training**
 ```
