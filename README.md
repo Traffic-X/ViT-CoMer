@@ -31,11 +31,14 @@ We present a plain, pre-training-free, and feature-enhanced ViT backbone with Co
 
 **Comparisons with state-of-the-arts.** We conduct experiments based on Co-DETR, using ViT-CoMer as the backbone, and initializing the model with multi-modal pre-training BEiTv2. As shown in Table 4, Our approach outperforms the existing SOTA algorithms without extra training data on COCO val2017, which strongly demonstrates the effectiveness of ViT-CoMer.
 
-**Segmentation.**  We conduct experiments based on Mask2Former using ViT-CoMer as the backbone, and initializing the model with multi-modal pre-training BEiTv2. As shown in Table 7, our method achieves com- parable performance to SOTA methods on ADE20K with fewer parameters. 
+<div align=center>
+<img src="img/sota.jpg" width = 50% >
+</div>
+
+For segmentation, we conduct experiments based on Mask2Former using ViT-CoMer as the backbone, and initializing the model with multi-modal pre-training BEiTv2. As shown in Table 7, our method achieves com- parable performance to SOTA methods on ADE20K with fewer parameters. 
 
 <div align=center>
-<img src="img/sota.jpg" style="height: 120px; flex: 1; object-fit: cover;">
-<img src="img/seg_sota.jpg" style="height: 120px; flex: 1; object-fit: cover;">
+<img src="img/seg_sota.jpg" width = 50% >
 </div>
 
 ## News
