@@ -2,13 +2,15 @@
 
 :fire::fire:**[CVPR 2024]** The official implementation of the paper "[ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions](https://arxiv.org/abs/2403.07392)"
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/object-detection-on-coco-minival)](https://paperswithcode.com/sota/object-detection-on-coco-minival?p=vit-comer-vision-transformer-with)[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=vit-comer-vision-transformer-with)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/object-detection-on-coco-minival)](https://paperswithcode.com/sota/object-detection-on-coco-minival?p=vit-comer-vision-transformer-with)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=vit-comer-vision-transformer-with)
 
 :fire::fire:|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) |
 
 
 
- <div align=center> <img title='vit-comer' src="/img/vit-comer-0312-2.png"> </div>
+ <div align=center> <img title='vit-comer' src="img/vit-comer-0312-2.png" width = 95% > </div>
 
 **The overall architecture of ViT-CoMer.** ViT-CoMer is a two-branch architecture consisting of three components: (a) a plain ViT with L layers, which is evenly divided into N stages for feature interaction. (b) a CNN branch that employs the proposed Multi-Receptive Field Feature Pyramid (MRFP) module to provide multi-scale spatial features, and (c) a simple and efficient CNN- Transformer Bidirectional Fusion Interaction (CTI) module to integrate the features of the two branches at different stages, enhancing semantic information.
 
@@ -35,30 +37,22 @@ We present a plain, pre-training-free, and feature-enhanced ViT backbone with Co
 **Segmentation.**  We conduct experiments based on Mask2Former using ViT-CoMer as the backbone, and initializing the model with multi-modal pre-training BEiTv2. As shown in Table 7, our method achieves com- parable performance to SOTA methods on ADE20K with fewer parameters. 
 
 <div align=center>
-<img src="img/sota.jpg" width = 40% ><img src="img/seg_sota.jpg" width = 48% >
+<img src="img/sota.jpg" style="height: 120px; flex: 1; object-fit: cover;">
+<img src="img/seg_sota.jpg" style="height: 120px; flex: 1; object-fit: cover;">
 </div>
 
 ## News
 
 - [x] create repo
-- [ ] release detection/segementation code
+- [x] release detection code
+- [ ] release segementation code
 - [ ] release beit3/dino weights
 
 
 ## Quick Start
-**Enveriment**. First install [MMDetection v2.22.0](https://github.com/open-mmlab/mmdetection/tree/v2.22.0). Then install the following package.
+* [**detection**](./detection)
 
-```
-pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
-pip install mmcv-full==1.4.2 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
-pip install timm==0.4.12
-pip install mmdet==2.22.0
-cd ops & sh make.sh # compile deformable attention
-```
-**Training**
-```
-bash run.sh
-```
+* [**segmentation**](./segmentation)
 
 ## Citation
 
