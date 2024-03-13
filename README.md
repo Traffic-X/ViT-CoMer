@@ -43,7 +43,7 @@ We present a plain, pre-training-free, and feature-enhanced ViT backbone with Co
 - [x] create repo
 - [x] release detection code
 - [ ] release segementation code
-- [ ] release beit3/dino weights
+- [ ] release SOTA weights
 
 
 ## Quick Start
