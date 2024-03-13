@@ -8,15 +8,12 @@
 
 :fire::fire:|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) |
 
-
-
  <div align=center> <img title='vit-comer' src="img/vit-comer-0312-2.png" width = 95% > </div>
 
 **The overall architecture of ViT-CoMer.** ViT-CoMer is a two-branch architecture consisting of three components: (a) a plain ViT with L layers, which is evenly divided into N stages for feature interaction. (b) a CNN branch that employs the proposed Multi-Receptive Field Feature Pyramid (MRFP) module to provide multi-scale spatial features, and (c) a simple and efficient CNN- Transformer Bidirectional Fusion Interaction (CTI) module to integrate the features of the two branches at different stages, enhancing semantic information.
 
 
 ## Highlights
-
 
  - We propose a novel dense prediction backbone by combining the plain ViT with CNN features. It effectively `leverages various open-source pre-trained ViT weights`  and incorporates spatial pyramid convolutional features that address the lack of interaction among local ViT features and the challenge of single-scale representation.
  - ViT-CoMer-L achieves **`SOTA 64.3% AP`** on COCO val2017 without training on extra detection data , and **`62.1% mIoU`** on ADE20K val.
@@ -51,7 +48,6 @@ We present a plain, pre-training-free, and feature-enhanced ViT backbone with Co
 
 ## Quick Start
 * [**detection**](./detection)
-
 * [**segmentation**](./segmentation)
 
 ## Citation
