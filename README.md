@@ -53,5 +53,21 @@ bash run.sh
 
 ## Citation
 
-## Acknowledgements
+If you find ViT-CoMer useful in your research, please consider giving a star ⭐ and citing:
 
+```
+@misc{xia2024vitcomer,
+      title={ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions}, 
+      author={Chunlong Xia and Xinliang Wang and Feng Lv and Xin Hao and Yifeng Shi},
+      year={2024},
+      eprint={2403.07392},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
+## Acknowledgements
+Many thanks to following codes that help us a lot in building this codebase:
+
+- [MMDetection](https://github.com/open-mmlab/mmdetection)
+- [ViT-Adapter](https://github.com/Jeremy-lf/ViT-Adapter/tree/main)
