@@ -1,8 +1,12 @@
 ## ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions
 
-:fire::fire:**[CVPR 2024]** The official implementation of the paper "[ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions](todo)"
+:fire::fire:**[CVPR 2024]** The official implementation of the paper "[ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions](https://arxiv.org/abs/2403.07392)"
 
-:fire::fire:**\[Guidelines\]**|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) | [检测排名图paperwithcode]() |[分割排名图paperwithcode]()|
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/object-detection-on-coco-minival)](https://paperswithcode.com/sota/object-detection-on-coco-minival?p=vit-comer-vision-transformer-with)[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=vit-comer-vision-transformer-with)
+
+:fire::fire:|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) |
+
+
 
  <div align=center> <img title='vit-comer' src="/img/vit-comer-0312-2.png"> </div>
 
@@ -13,7 +17,7 @@
 
 
  - We propose a novel dense prediction backbone by combining the plain ViT with CNN features. It effectively `leverages various open-source pre-trained ViT weights`  and incorporates spatial pyramid convolutional features that address the lack of interaction among local ViT features and the challenge of single-scale representation.
- - ViT-CoMer-L achieves **`64.3% AP`** on COCO val2017 without extra training data, and **`62.1% mIoU`** on ADE20K val.
+ - ViT-CoMer-L achieves **`SOTA 64.3% AP`** on COCO val2017 without training on extra detection data , and **`62.1% mIoU`** on ADE20K val.
 
 
 
@@ -38,7 +42,7 @@ We present a plain, pre-training-free, and feature-enhanced ViT backbone with Co
 
 - [x] create repo
 - [ ] release detection/segementation code
-- [ ] release beit/dino weights
+- [ ] release beit3/dino weights
 
  
 ## Quick Start
