@@ -1,74 +1,146 @@
-## ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions
+# DETRs with Collaborative Hybrid Assignments Training
 
-:fire::fire:**[CVPR 2024]** The official implementation of the paper "[ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions](https://arxiv.org/abs/2403.07392)"
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/detrs-with-collaborative-hybrid-assignments/object-detection-on-coco-minival)](https://paperswithcode.com/sota/object-detection-on-coco-minival?p=detrs-with-collaborative-hybrid-assignments)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/detrs-with-collaborative-hybrid-assignments/object-detection-on-coco)](https://paperswithcode.com/sota/object-detection-on-coco?p=detrs-with-collaborative-hybrid-assignments)	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/detrs-with-collaborative-hybrid-assignments/object-detection-on-lvis-v1-0-minival)](https://paperswithcode.com/sota/object-detection-on-lvis-v1-0-minival?p=detrs-with-collaborative-hybrid-assignments)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/detrs-with-collaborative-hybrid-assignments/object-detection-on-lvis-v1-0-val)](https://paperswithcode.com/sota/object-detection-on-lvis-v1-0-val?p=detrs-with-collaborative-hybrid-assignments)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/detrs-with-collaborative-hybrid-assignments/instance-segmentation-on-lvis-v1-0-val)](https://paperswithcode.com/sota/instance-segmentation-on-lvis-v1-0-val?p=detrs-with-collaborative-hybrid-assignments)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/object-detection-on-coco-minival)](https://paperswithcode.com/sota/object-detection-on-coco-minival?p=vit-comer-vision-transformer-with)
+This repo is the official implementation of ["DETRs with Collaborative Hybrid Assignments Training"](https://arxiv.org/pdf/2211.12860.pdf) by Zhuofan Zong, Guanglu Song, and Yu Liu.
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=vit-comer-vision-transformer-with)
-
-:fire::fire:|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) |[ViT-CoMer第三方微信公众号解读](https://mp.weixin.qq.com/s/RHV18ShP15Kq1DSbsiDiKw)
-
- <div align=center> <img title='vit-comer' src="img/vit-comer-0312-2.png" width = 95% > </div>
-
-**The overall architecture of ViT-CoMer.** ViT-CoMer is a two-branch architecture consisting of three components: (a) a plain ViT with L layers, which is evenly divided into N stages for feature interaction. (b) a CNN branch that employs the proposed Multi-Receptive Field Feature Pyramid (MRFP) module to provide multi-scale spatial features, and (c) a simple and efficient CNN- Transformer Bidirectional Fusion Interaction (CTI) module to integrate the features of the two branches at different stages, enhancing semantic information.
-
-
-## Highlights
-
- - We propose a novel dense prediction backbone by combining the plain ViT with CNN features. It effectively `leverages various open-source pre-trained ViT weights`  and incorporates spatial pyramid convolutional features that address the lack of interaction among local ViT features and the challenge of single-scale representation.
- - ViT-CoMer-L achieves **`SOTA 64.3% AP`** on COCO val2017 without training on extra detection data , and **`62.1% mIoU`** on ADE20K val.
-
-
-
-## Introduction
-We present a plain, pre-training-free, and feature-enhanced ViT backbone with Convolutional Multi-scale feature interaction, named ViT-CoMer, which facilitates bidirectional interaction between CNN and transformer. Compared to the state-of-the-art, ViT-CoMer has the following advantages: (1) We inject spatial pyramid multi-receptive field convolutional features into the ViT architecture, which effectively alleviates the problems of limited local information interaction and single-feature representation in ViT. (2) We propose a simple and efficient CNN-Transformer bidirectional fusion interaction module that performs multi-scale fusion across hierarchical features, which is beneficial for handling dense prediction tasks.
-<div align=center>  <img src="img/vit-comer-0.jpg" width = 45%> </div>
-
-## Main Results
-
-**Comparisons with different backbones and frameworks.**  It can be seen that under similar model sizes, ViT-CoMer outper- forms other backbones in the two typical dense prediction tasks of COCO object detection and instance segmentation.
-<div align=center>  <img src="img/exp_0.jpg" width = 70% > </div>
-
-**Comparisons with state-of-the-arts.** We conduct experiments based on Co-DETR, using ViT-CoMer as the backbone, and initializing the model with multi-modal pre-training BEiTv2. As shown in Table 4, Our approach outperforms the existing SOTA algorithms without extra training data on COCO val2017, which strongly demonstrates the effectiveness of ViT-CoMer.
-
-<div align=center>
-<img src="img/sota.jpg" width = 50% >
-</div>
-
-For segmentation, we conduct experiments based on Mask2Former using ViT-CoMer as the backbone, and initializing the model with multi-modal pre-training BEiTv2. As shown in Table 7, our method achieves com- parable performance to SOTA methods on ADE20K with fewer parameters. 
-
-<div align=center>
-<img src="img/seg_sota.jpg" width = 50% >
-</div>
 
 ## News
 
-- [x] create repo
-- [x] release detection code
-- [ ] release segementation code
-- [ ] release SOTA weights
+* ***[09/10/2023]*** We release LVIS inference configs and a stronger LVIS detector that achieves **64.5 box AP**.
+* ***[08/21/2023]*** Our O365 pre-trained Co-DETR with Swin-L achieves **64.8 AP** on COCO test-dev. The config and weights are released.
+* ***[07/20/2023]*** Code for Co-DINO is released: **55.4 AP** with ResNet-50 and **60.7 AP** with Swin-L.
+* ***[07/14/2023]*** Co-DETR is accepted to ICCV 2023!
+* ***[07/12/2023]*** We finetune Co-DETR on LVIS and achieve the best results **without TTA**: **71.9 box AP** and **59.7 mask AP** on LVIS minival, **67.9 box AP** and **56.0 mask AP** on LVIS val. For instance segmentation, we report the performance of the auxiliary mask branch.
+* ***[07/03/2023]*** Co-DETR with [ViT-L](https://github.com/baaivision/EVA/tree/master/EVA-02) **(304M parameters)** sets a new record of <strike>65.6</strike> **66.0 AP** on COCO test-dev, surpassing the previous best model [InternImage-G](https://github.com/OpenGVLab/InternImage) **(~3000M parameters)**. It is the **first model to exceed 66.0 AP on COCO test-dev**.
+* ***[07/03/2023]*** Code for Co-Deformable-DETR is released.
+* ***[11/19/2022]*** We achieved 64.4 AP on COCO minival and 64.5 AP on COCO test-dev with only ImageNet-1K as pre-training data. Codes will be available soon.
+   
+
+## Introduction
+
+![teaser](figures/framework.png)
+
+In this paper, we present a novel collaborative hybrid assignments training scheme, namely Co-DETR, to learn more efficient and effective DETR-based detectors from versatile label assignment manners. 
+1. **Encoder optimization**: The proposed training scheme can easily enhance the encoder's learning ability in end-to-end detectors by training multiple parallel auxiliary heads supervised by one-to-many label assignments. 
+2. **Decoder optimization**: We conduct extra customized positive queries by extracting the positive coordinates from these auxiliary heads to improve attention learning of the decoder. 
+3. **State-of-the-art performance**: Co-DETR with [ViT-L](https://github.com/baaivision/EVA/tree/master/EVA-02) (304M parameters) is **the first model to achieve 66.0 AP on COCO test-dev.**
+
+![teaser](figures/performance.png)
+
+## Model Zoo
+
+### Objects365 pre-trained Co-DETR
+
+Note: the inconsistent pre-training and fine-tuning augmentation settings (DETR and LSJ aug) for the Swin-L model degenerate the performance on LVIS.
+| Model  | Backbone | Epochs | Aug | Dataset | box AP (val) | Config | Download |
+| ------ | -------- | ------ | --- | ------- | ------------ | ------ | ----- |
+| Co-DINO | Swin-L | 16 | DETR | COCO | 64.1 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_swin_large_16e_o365tococo.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | Swin-L | 16 | LSJ | LVIS | 64.5 | [config (test)](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_swin_large_16e_o365tolvis.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+
+### Co-DETR with ResNet-50
+
+| Model  | Backbone | Epochs | Aug | Dataset | box AP | Config | Download |
+| ------ | -------- | ------ | --- | ------- | ------ | ------ | ----- |
+| Co-DINO | R50 | 12 | DETR | COCO | 52.1 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_r50_1x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | R50 | 12 | LSJ | COCO | 52.1 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_lsj_r50_1x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO-9enc | R50 | 12 | LSJ | COCO | 52.6 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_9encoder_lsj_r50_1x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | R50 | 36 | LSJ | COCO | 54.8 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_lsj_r50_3x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO-9enc | R50 | 36 | LSJ | COCO | 55.4 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_9encoder_lsj_r50_3x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
 
 
-## Quick Start
-* [**detection**](./detection)
-* [**segmentation**](./segmentation)
+### Co-DETR with Swin-L
 
-## Citation
+| Model  | Backbone | Epochs | Aug | Dataset | box AP | Config | Download |
+| ------ | -------- | ------ | --- | ------- | ------ | ------ | ----- |
+| Co-DINO | Swin-L | 12 | DETR | COCO | 58.9 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_swin_large_1x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | Swin-L | 24 | DETR | COCO | 59.8 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_swin_large_2x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | Swin-L | 36 | DETR | COCO | 60.0 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_swin_large_3x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | Swin-L | 12 | LSJ | COCO | 59.3 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_lsj_swin_large_1x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | Swin-L | 24 | LSJ | COCO | 60.4 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_lsj_swin_large_2x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | Swin-L | 36 | LSJ | COCO | 60.7 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_lsj_swin_large_3x_coco.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
+| Co-DINO | Swin-L | 36 | LSJ | LVIS | 56.9 | [config (test)](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_dino/co_dino_5scale_lsj_swin_large_3x_lvis.py) | [model](https://drive.google.com/drive/folders/1nAXOkzqrEgz-YnXxIEs4d5j9li_kmrnv?usp=sharing) |
 
-If you find ViT-CoMer useful in your research, please consider giving a star ⭐ and citing:
+### Co-Deformable-DETR
 
+| Model  | Backbone | Epochs | Queries | box AP | Config | Download |
+| ------ | -------- | ------ | ------- | ------ | ---- | --- |
+| Co-Deformable-DETR | R50 | 12 | 300 | 49.5 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_r50_1x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-T | 12 | 300 | 51.7 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_tiny_1x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-T | 36 | 300 | 54.1 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_tiny_3x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-S | 12 | 300 | 53.4 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_small_1x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-S | 36 | 300 | 55.3 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_small_3x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-B | 12 | 300 | 55.5 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_base_1x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-B | 36 | 300 | 57.5 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_base_3x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-L | 12 | 300 | 56.9 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_large_1x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+| Co-Deformable-DETR | Swin-L | 36 | 900 | 58.5 | [config](https://github.com/Sense-X/Co-DETR/blob/main/projects/configs/co_deformable_detr/co_deformable_detr_swin_large_900q_3x_coco.py) | [model](https://drive.google.com/drive/folders/1asWoZ3SuM6APTL9D-QUF_YW9mjULNdh9?usp=sharing) \| [log](https://drive.google.com/drive/folders/1GktHRm2oAxmOzdK3jPaRqNu4uOQhecgZ?usp=sharing) |
+
+## Running
+
+### Install
+We implement Co-DETR using [MMDetection V2.25.3](https://github.com/open-mmlab/mmdetection/releases/tag/v2.25.3) and [MMCV V1.5.0](https://github.com/open-mmlab/mmcv/releases/tag/v1.5.0).
+The source code of MMdetection has been included in this repo and you only need to build MMCV following [official instructions](https://github.com/open-mmlab/mmcv/tree/v1.5.0#installation).
+We test our models under ```python=3.7.11,pytorch=1.11.0,cuda=11.3```. Other versions may not be compatible. 
+
+### Data
+The COCO dataset and LVIS dataset should be organized as:
 ```
-@article{xia2024vit,
-  title={ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions},
-  author={Xia, Chunlong and Wang, Xinliang and Lv, Feng and Hao, Xin and Shi, Yifeng},
-  journal={arXiv preprint arXiv:2403.07392},
-  year={2024}
+Co-DETR
+└── data
+    ├── coco
+    │   ├── annotations
+    │   │      ├── instances_train2017.json
+    │   │      └── instances_val2017.json
+    │   ├── train2017
+    │   └── val2017
+    │
+    └── lvis_v1
+        ├── annotations
+        │      ├── lvis_v1_train.json
+        │      └── lvis_v1_val.json
+        ├── train2017
+        └── val2017        
+```
+
+### Training
+Train Co-Deformable-DETR + ResNet-50 with 8 GPUs:
+```shell
+sh tools/dist_train.sh projects/configs/co_deformable_detr/co_deformable_detr_r50_1x_coco.py 8 path_to_exp
+```
+Train using slurm:
+```shell
+sh tools/slurm_train.sh partition job_name projects/configs/co_deformable_detr/co_deformable_detr_r50_1x_coco.py path_to_exp
+```
+
+### Testing
+Test Co-Deformable-DETR + ResNet-50 with 8 GPUs, and evaluate:
+```shell
+sh tools/dist_test.sh  projects/configs/co_deformable_detr/co_deformable_detr_r50_1x_coco.py path_to_checkpoint 8 --eval bbox
+```
+Test using slurm:
+```shell
+sh tools/slurm_test.sh partition job_name projects/configs/co_deformable_detr/co_deformable_detr_r50_1x_coco.py path_to_checkpoint --eval bbox
+```
+
+## Cite Co-DETR
+
+If you find this repository useful, please use the following BibTeX entry for citation.
+
+```latex
+@misc{codetr2022,
+      title={DETRs with Collaborative Hybrid Assignments Training},
+      author={Zhuofan Zong and Guanglu Song and Yu Liu},
+      year={2022},
+      eprint={2211.12860},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
-## Acknowledgements
-Many thanks to following codes that help us a lot in building this codebase:
+## License
 
-- [MMDetection](https://github.com/open-mmlab/mmdetection)
-- [ViT-Adapter](https://github.com/Jeremy-lf/ViT-Adapter/tree/main)
-
+This project is released under the MIT license. Please see the [LICENSE](LICENSE) file for more information.
