@@ -2,24 +2,50 @@ _base_ = [
     'co_dino_5scale_r50_1x_coco.py'
 ]
 
-# load_from = 'models/co_dino_5scale_swin_large_22e_o365.pth'
-pretrained = None
+load_from = ''
+
 # model settings
 model = dict(
     backbone=dict(
         _delete_=True,
-        type='SwinTransformerV1',
-        embed_dim=192,
-        depths=[2, 2, 18, 2],
-        num_heads=[6, 12, 24, 48],
-        out_indices=(0, 1, 2, 3),
-        window_size=12,
-        ape=False,
+        type='BEiTComer2',
+        img_size=224,
+        patch_size=16,
+        embed_dim=1024,
+        depth=24,
+        num_heads=16,
+        mlp_ratio=4,
+        qkv_bias=True,
+        use_abs_pos_emb=False,
+        use_rel_pos_bias=True,
+        init_values=1e-6,
         drop_path_rate=0.3,
-        patch_norm=True,
-        use_checkpoint=True,
-        pretrained=pretrained),
-    neck=dict(in_channels=[192, 192*2, 192*4, 192*8]),
+        conv_inplane=64,
+        n_points=4,
+        deform_num_heads=16,
+        cffn_ratio=0.25,
+        deform_ratio=0.5,
+        with_cp=True,
+        use_injector=[True, True, True, True], 
+        use_extractor=[True, True, True, True],
+        cnn_feature_interaction=[True, True, True, True],
+        window_attn=[True, True, True, True, True, True,
+                     True, True, True, True, True, True,
+                     True, True, True, True, True, True,
+                     True, True, True, True, True, True],
+        window_size=[14, 14, 14, 14, 14, 56,
+                     14, 14, 14, 14, 14, 56,
+                     14, 14, 14, 14, 14, 56,
+                     14, 14, 14, 14, 14, 56],
+        interaction_indexes=[[0, 5], [6, 11], [12, 17], [18, 23]],
+        pretrained=None),
+    neck=dict(        
+        type='SFP',
+        in_channels=[1024],        
+        out_channels=256,
+        num_outs=5,
+        use_p2=True,
+        use_act_checkpoint=False),
     query_head=dict(
         dn_cfg=dict(
             type='CdnQueryGenerator',
@@ -42,15 +68,15 @@ train_pipeline = [
             [
                 dict(
                     type='Resize',
-                    img_scale=[(480, 2048), (512, 2048), (544, 2048), (576, 2048),
-                               (608, 2048), (640, 2048), (672, 2048), (704, 2048),
-                               (736, 2048), (768, 2048), (800, 2048), (832, 2048),
-                               (864, 2048), (896, 2048), (928, 2048), (960, 2048),
-                               (992, 2048), (1024, 2048), (1056, 2048), (1088, 2048),
-                               (1120, 2048), (1152, 2048), (1184, 2048), (1216, 2048),
-                               (1248, 2048), (1280, 2048), (1312, 2048), (1344, 2048),
-                               (1376, 2048), (1408, 2048), (1440, 2048), (1472, 2048),
-                               (1504, 2048), (1536, 2048)],
+                    img_scale=[(480, 2176), (512, 2176), (544, 2176), (576, 2176),
+                               (608, 2176), (640, 2176), (672, 2176), (704, 2176),
+                               (736, 2176), (768, 2176), (800, 2176), (832, 2176),
+                               (864, 2176), (896, 2176), (928, 2176), (960, 2176),
+                               (992, 2176), (1024, 2176), (1056, 2176), (1088, 2176),
+                               (1120, 2176), (1152, 2176), (1184, 2176), (1216, 2176),
+                               (1248, 2176), (1280, 2176), (1312, 2176), (1344, 2176),
+                               (1376, 2176), (1408, 2176), (1440, 2176), (1472, 2176),
+                               (1504, 2176), (1536, 2176), (1568, 2176), (1600, 2176)],
                     multiscale_mode='value',
                     keep_ratio=True)
             ],
@@ -69,15 +95,15 @@ train_pipeline = [
                     allow_negative_crop=True),
                 dict(
                     type='Resize',
-                    img_scale=[(480, 2048), (512, 2048), (544, 2048), (576, 2048),
-                               (608, 2048), (640, 2048), (672, 2048), (704, 2048),
-                               (736, 2048), (768, 2048), (800, 2048), (832, 2048),
-                               (864, 2048), (896, 2048), (928, 2048), (960, 2048),
-                               (992, 2048), (1024, 2048), (1056, 2048), (1088, 2048),
-                               (1120, 2048), (1152, 2048), (1184, 2048), (1216, 2048),
-                               (1248, 2048), (1280, 2048), (1312, 2048), (1344, 2048),
-                               (1376, 2048), (1408, 2048), (1440, 2048), (1472, 2048),
-                               (1504, 2048), (1536, 2048)],
+                    img_scale=[(480, 2176), (512, 2176), (544, 2176), (576, 2176),
+                               (608, 2176), (640, 2176), (672, 2176), (704, 2176),
+                               (736, 2176), (768, 2176), (800, 2176), (832, 2176),
+                               (864, 2176), (896, 2176), (928, 2176), (960, 2176),
+                               (992, 2176), (1024, 2176), (1056, 2176), (1088, 2176),
+                               (1120, 2176), (1152, 2176), (1184, 2176), (1216, 2176),
+                               (1248, 2176), (1280, 2176), (1312, 2176), (1344, 2176),
+                               (1376, 2176), (1408, 2176), (1440, 2176), (1472, 2176),
+                               (1504, 2176), (1536, 2176), (1568, 2176), (1600, 2176)],
                     multiscale_mode='value',
                     override=True,
                     keep_ratio=True)
@@ -92,7 +118,7 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(2048, 1280),
+        img_scale=(2176, 1312),
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=True),
@@ -114,9 +140,14 @@ data = dict(
 optimizer = dict(
     type='AdamW',
     lr=1e-4,
-    weight_decay=0.0001,
+    weight_decay=0.05,
     # custom_keys of sampling_offsets and reference_points in DeformDETR
     paramwise_cfg=dict(custom_keys={'backbone': dict(lr_mult=0.1)}))
+
+# optimizer = dict(
+#     _delete_=True, type='AdamW', lr=0.00005, weight_decay=0.05,
+#     constructor='LayerDecayOptimizerConstructor',
+#     paramwise_cfg=dict(num_layers=24, layer_decay_rate=0.80))
 
 optimizer_config = dict(grad_clip=dict(max_norm=0.1, norm_type=2))
 # learning policy
