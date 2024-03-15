@@ -1,4 +1,4 @@
-## Running
+## Applying ViT-CoMer to Co-DETR
 
 ### Install
 We implement Co-DETR using [MMDetection V2.25.3](https://github.com/open-mmlab/mmdetection/releases/tag/v2.25.3) and [MMCV V1.5.0](https://github.com/open-mmlab/mmcv/releases/tag/v1.5.0).
