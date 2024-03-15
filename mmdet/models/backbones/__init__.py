@@ -16,7 +16,6 @@ from .resnext import ResNeXt
 from .ssd_vgg import SSDVGG
 from .swin import SwinTransformer
 from .trident_resnet import TridentResNet
-from .beit_commer import BEiTComer
 from .beit_commer_v2 import BEiTComer2
 
 __all__ = [
@@ -25,5 +24,5 @@ __all__ = [
     'DetectoRS_ResNeXt', 'Darknet', 'ResNeSt', 'TridentResNet', 'CSPDarknet',
     'SwinTransformer', 'PyramidVisionTransformer',
     'PyramidVisionTransformerV2', 'EfficientNet',
-    'BEiTComer', 'BEiTComer2'
+    'BEiTComer2'
 ]

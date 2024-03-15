@@ -13,8 +13,6 @@ from torch.nn.init import normal_
 from .base.beit import BEiT
 
 from .commer_modules import SpatialPriorModule, InteractionBlock, deform_inputs
-# from .comer_modules_plus import SpatialPriorModule, InteractionBlock, deform_inputs
-# from .commer_modules_v2 import SpatialPriorModule, InteractionBlock, deform_inputs
 
 _logger = logging.getLogger(__name__)
 
