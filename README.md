@@ -6,7 +6,7 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=vit-comer-vision-transformer-with)
 
-:fire::fire:|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) |
+:fire::fire:|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) |[ViT-CoMer第三方微信公众号解读](https://mp.weixin.qq.com/s/RHV18ShP15Kq1DSbsiDiKw)
 
  <div align=center> <img title='vit-comer' src="img/vit-comer-0312-2.png" width = 95% > </div>
 
