@@ -2,8 +2,7 @@ _base_ = [
     'co_dino_5scale_r50_1x_coco.py'
 ]
 
-load_from = 'o365_backbone_codetr_head.pth'
-# load_from = 'work_dirs/co_dino_5scale_vitcomer_16e_o365tococo/epoch_13.pth'
+load_from = ''
 
 # model settings
 model = dict(
