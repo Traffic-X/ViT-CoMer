@@ -43,8 +43,9 @@ For segmentation, we conduct experiments based on Mask2Former using ViT-CoMer as
 
 ## News
 
-- [x] create repo
-- [x] release detection code
+- [x] ***[20240313]***  create repo
+- [x] ***[20240313]***  we release detection code and pretrain weights
+- [x] ***[20240315]***  we release ViT-CoMer-L with Co-DETR head configs, which achieves **`64.3 AP`** on COCO 2017val
 - [ ] release segementation code
 - [ ] release SOTA weights
 
