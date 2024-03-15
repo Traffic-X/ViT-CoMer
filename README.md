@@ -58,13 +58,11 @@ For segmentation, we conduct experiments based on Mask2Former using ViT-CoMer as
 If you find ViT-CoMer useful in your research, please consider giving a star ⭐ and citing:
 
 ```
-@misc{xia2024vitcomer,
-      title={ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions}, 
-      author={Chunlong Xia and Xinliang Wang and Feng Lv and Xin Hao and Yifeng Shi},
-      year={2024},
-      eprint={2403.07392},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{xia2024vit,
+  title={ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions},
+  author={Xia, Chunlong and Wang, Xinliang and Lv, Feng and Hao, Xin and Shi, Yifeng},
+  journal={arXiv preprint arXiv:2403.07392},
+  year={2024}
 }
 ```
 
