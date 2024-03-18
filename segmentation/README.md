@@ -29,7 +29,7 @@ cd ops & sh make.sh # compile deformable attention
 
 | Method  | Backbone   | Pretrain  | Lr schd | Crop Size | mIoU(SS/MS) | #Param  | Config | Ckpt |Log |
 |:----------:|:-------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:------:|:-------:|:--------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|:-------------:|:-------------:|
-| UperNet | ViT-CoMer-S | [DeiT-T](https://pan.baidu.com/s/1-2a--MV1yVemzM1QX_0bNQ?pwd=r9uv)                                                                                                 | 160k   | 512   | 43.5/-   |     38.7M  | [config](./configs/mask_rcnn/dinov2/mask_rcnn_dinov2_comer_small_fpn_1x_coco.py)  |[ckpt](https://pan.baidu.com/s/1BMb14R4XaTG0wxbWQWoIGQ?pwd=tkc5)   |[log](https://pan.baidu.com/s/1yW7DoMDTdjeSkNQOA2vwzw?pwd=n62v)|
+| UperNet | ViT-CoMer-S | [DeiT-T](https://pan.baidu.com/s/1-2a--MV1yVemzM1QX_0bNQ?pwd=r9uv)                                                                                                 | 160k   | 512   | 43.5/-   |     38.7M  | [config](https://pan.baidu.com/s/1KxzkLZu8qXi9wfIe3JF04w?pwd=4gjs)  |[ckpt](https://pan.baidu.com/s/1J_XgJ058PpK8gqz9E0Caig?pwd=k6mf)   |[log](https://pan.baidu.com/s/1qh6xvubnU9Y6bG6UNp22IA?pwd=3p8u)|
 
 ## Evaluation
 
