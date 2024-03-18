@@ -25,7 +25,7 @@ cd ops & sh make.sh # compile deformable attention
 To evaluate ViT-CoMer-T + UperNet (512) on ADE20k val on a single node with 8 gpus run:
 
 ```shell
-sh train.sh
+sh test.sh
 ```
 
 
@@ -34,5 +34,5 @@ sh train.sh
 To train ViT-Adapter-T + UperNet on ADE20k on a single node with 8 gpus run:
 
 ```shell
-sh test.sh
+sh train.sh
 ```
