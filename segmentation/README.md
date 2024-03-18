@@ -23,12 +23,13 @@ cd ops & sh make.sh # compile deformable attention
 
 **ADE20K val**
 
-| Method  | Backbone | Pretrain  | Lr schd | Crop Size | mIoU(SS/MS) | #Param  | Config  | Ckpt | Log |
-|:----------:|:-------------:|:----------:|:-------:|:------:|:-------:|:-----:|:----:|:-------------:|
-| UperNet | ViT-CoMer-T | []()                                                                                                 | 1×   | 52.1   | 45.8   | [config]()         | [ckpt]()  | [log]() |
-| UperNet | ViT-CoMer-S | []()                                                                                                 | 3×   | 48.6   | 42.9   | [config]()         | [ckpt]()  | [log]() |
-| UperNet | ViT-CoMer-B | []()                                                                                                 | 1×   | 52.0   | 45.5   | [config]()         | [ckpt]()  | [log]() |
-| UperNet | ViT-CoMer-L | []()                                                                                                 | 3×   | 54.2   | 47.6   | [config]()         | [ckpt]()  | [log]() |
+
+
+
+
+| Method  | Backbone   | Pretrain  | Lr schd | Crop Size | mIoU(SS/MS) | #Param  | Config | Ckpt |Log |
+|:----------:|:-------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:------:|:-------:|:--------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|:-------------:|:-------------:|
+| Mask R-CNN | ViT-CoMer-S | [DINOv2-S](https://pan.baidu.com/s/1-2a--MV1yVemzM1QX_0bNQ?pwd=r9uv)                                                                                                 | 1×   | 52.1   | 45.8   | [config](./configs/mask_rcnn/dinov2/mask_rcnn_dinov2_comer_small_fpn_1x_coco.py)         | [ckpt](https://pan.baidu.com/s/1BMb14R4XaTG0wxbWQWoIGQ?pwd=tkc5)  | [log](https://pan.baidu.com/s/1yW7DoMDTdjeSkNQOA2vwzw?pwd=n62v) |-|
 
 ## Evaluation
 
