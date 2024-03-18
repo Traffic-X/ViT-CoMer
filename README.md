@@ -46,7 +46,7 @@ For segmentation, we conduct experiments based on Mask2Former using ViT-CoMer as
 - [x] ***[20240313]***  create repo
 - [x] ***[20240313]***  we release detection code and pretrain weights
 - [x] ***[20240315]***  we release ViT-CoMer-L with Co-DETR head configs, which achieves **`64.3 AP`** on COCO 2017val
-- [ ] release segementation code
+- [ ] ***[20240318]***  we release segementation code and pretrain weights
 - [ ] release SOTA weights
 
 
@@ -72,4 +72,8 @@ Many thanks to following codes that help us a lot in building this codebase:
 
 - [MMDetection](https://github.com/open-mmlab/mmdetection)
 - [ViT-Adapter](https://github.com/Jeremy-lf/ViT-Adapter/tree/main)
+
+
+## Contact
+If you have any questions while using ViT-CoMer or would like to further discuss implementation details with us, please `leave a message on issues` or contact us directly via email: `xiachunlong@baidu.com`. We will reply as soon as possible.
 
