@@ -1,3 +1,4 @@
 from .vit_comer import ViTCoMer
+from .vit_baseline import ViTBaseline
 
-__all__ = ['ViTCoMer']
+__all__ = ['ViTCoMer', 'ViTBaseline']
