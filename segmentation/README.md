@@ -42,7 +42,7 @@ sh test.sh
 
 ## Training
 
-To train ViT-Adapter-T + UperNet on ADE20k on a single node with 8 gpus run:
+To train ViT-CoMer-T + UperNet on ADE20k on a single node with 8 gpus run:
 
 ```shell
 sh train.sh
