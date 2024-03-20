@@ -10,19 +10,13 @@ The COCO dataset and LVIS dataset should be organized as:
 ```
 Co-DETR
 └── data
-    ├── coco
-    │   ├── annotations
-    │   │      ├── instances_train2017.json
-    │   │      └── instances_val2017.json
-    │   ├── train2017
-    │   └── val2017
-    │
-    └── lvis_v1
+    └── coco
         ├── annotations
-        │      ├── lvis_v1_train.json
-        │      └── lvis_v1_val.json
+        │      ├── instances_train2017.json
+        │      └── instances_val2017.json
         ├── train2017
-        └── val2017        
+        └── val2017
+   
 ```
 
 ### Training
