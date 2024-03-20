@@ -1,4 +1,3 @@
-# Copyright (c) Shanghai AI Lab. All rights reserved.
 import logging
 import math
 
