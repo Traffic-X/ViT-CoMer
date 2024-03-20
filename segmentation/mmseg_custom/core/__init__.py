@@ -1,4 +1,3 @@
-# Copyright (c) Shanghai AI Lab. All rights reserved.
 from mmseg.core.evaluation import *  # noqa: F401, F403
 from mmseg.core.seg import *  # noqa: F401, F403
 
