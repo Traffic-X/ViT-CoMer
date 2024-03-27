@@ -8,7 +8,7 @@
 
 :fire::fire:| [Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com/p/687695841) | [ViT-CoMer第三方微信公众号解读](https://mp.weixin.qq.com/s/RHV18ShP15Kq1DSbsiDiKw)
 
- <div align=center> <img title='vit-comer' src="img/vit-comer-0312-2.png" width = 95% > </div>
+ <div align=center> <img title='vit-comer' src="img/vit_comer.jpg" width = 95% > </div>
 
 **The overall architecture of ViT-CoMer.** ViT-CoMer is a two-branch architecture consisting of three components: (a) a plain ViT with L layers, which is evenly divided into N stages for feature interaction. (b) a CNN branch that employs the proposed Multi-Receptive Field Feature Pyramid (MRFP) module to provide multi-scale spatial features, and (c) a simple and efficient CNN- Transformer Bidirectional Fusion Interaction (CTI) module to integrate the features of the two branches at different stages, enhancing semantic information.
 
