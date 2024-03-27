@@ -12,7 +12,7 @@ from torch.nn.init import normal_
 
 from .base.beit import BEiT
 
-from .commer_modules import SpatialPriorModule, InteractionBlock, deform_inputs
+from .comer_modules import SpatialPriorModule, InteractionBlock, deform_inputs
 
 _logger = logging.getLogger(__name__)
 
