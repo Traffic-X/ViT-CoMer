@@ -16,7 +16,7 @@ from .resnext import ResNeXt
 from .ssd_vgg import SSDVGG
 from .swin import SwinTransformer
 from .trident_resnet import TridentResNet
-from .beit_commer_v2 import BEiTComer2
+from .beit_comer_v2 import BEiTComer2
 
 __all__ = [
     'RegNet', 'ResNet', 'ResNetV1d', 'ResNeXt', 'SSDVGG', 'HRNet',
