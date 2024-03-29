@@ -372,6 +372,7 @@ class CTIBlock(nn.Module):
                  deform_ratio=1.0, extra_CTI=False, with_cp=False, 
                  use_CTI_toV=True, 
                  use_CTI_toC=True,
+                 dim_ratio=6.0,
                  cnn_feature_interaction=False):
         super().__init__()
 
@@ -400,7 +401,7 @@ class CTIBlock(nn.Module):
         self.use_CTI_toV = use_CTI_toV
         self.use_CTI_toC = use_CTI_toC
 
-        self.mrfp = MRFP(dim, hidden_features=int(dim * 6))
+        self.mrfp = MRFP(dim, hidden_features=int(dim * dim_ratio))
 
     
     def forward(self, x, c, blocks, deform_inputs1, deform_inputs2, H, W):
@@ -414,8 +415,6 @@ class CTIBlock(nn.Module):
             x = self.cti_tov(query=x, reference_points=deform_inputs[0],
                           feat=c, spatial_shapes=deform_inputs[1],
                           level_start_index=deform_inputs[2], H=H, W=W)
-
-            
 
         for idx, blk in enumerate(blocks):
             x = blk(x, H, W)
