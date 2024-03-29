@@ -6,9 +6,9 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vit-comer-vision-transformer-with/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=vit-comer-vision-transformer-with)
 
-:fire::fire:|[Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com) |[ViT-CoMer第三方微信公众号解读](https://mp.weixin.qq.com/s/RHV18ShP15Kq1DSbsiDiKw)
+:fire::fire:| [Paper](https://arxiv.org/abs/2403.07392) | [ViT-CoMer知乎解读](https://zhuanlan.zhihu.com/p/687695841) | [ViT-CoMer第三方微信公众号解读](https://mp.weixin.qq.com/s/RHV18ShP15Kq1DSbsiDiKw)
 
- <div align=center> <img title='vit-comer' src="img/vit-comer-0312-2.png" width = 95% > </div>
+ <div align=center> <img title='vit-comer' src="img/vit_comer.jpg" width = 95% > </div>
 
 **The overall architecture of ViT-CoMer.** ViT-CoMer is a two-branch architecture consisting of three components: (a) a plain ViT with L layers, which is evenly divided into N stages for feature interaction. (b) a CNN branch that employs the proposed Multi-Receptive Field Feature Pyramid (MRFP) module to provide multi-scale spatial features, and (c) a simple and efficient CNN- Transformer Bidirectional Fusion Interaction (CTI) module to integrate the features of the two branches at different stages, enhancing semantic information.
 
@@ -44,9 +44,9 @@ For segmentation, we conduct experiments based on Mask2Former using ViT-CoMer as
 ## News
 
 - [x] ***[20240313]***  create repo
-- [x] ***[20240313]***  we release detection code and pretrain weights
+- [x] ***[20240313]***  we release detection code and pre-trained weights
 - [x] ***[20240315]***  we release ViT-CoMer-L with Co-DETR head configs, which achieves **`64.3 AP`** on COCO 2017val
-- [ ] release segementation code
+- [x] ***[20240318]***  we release segementation code and pre-trained weights
 - [ ] release SOTA weights
 
 
@@ -71,5 +71,9 @@ If you find ViT-CoMer useful in your research, please consider giving a star ⭐
 Many thanks to following codes that help us a lot in building this codebase:
 
 - [MMDetection](https://github.com/open-mmlab/mmdetection)
-- [ViT-Adapter](https://github.com/Jeremy-lf/ViT-Adapter/tree/main)
+- [ViT-Adapter](https://github.com/czczup/ViT-Adapter)
+
+
+## Contact
+If you have any questions while using ViT-CoMer or would like to further discuss implementation details with us, please `leave a message on issues` or contact us directly via email: `xiachunlong@baidu.com`. We will reply as soon as possible.
 
