@@ -38,7 +38,7 @@ cd ops & sh make.sh # compile deformable attention
 
 | Method  | Backbone   | Pretrain  | Lr schd | Crop Size | mIoU(SS/MS) | #Param  | Config | Ckpt |Log |
 |:----------:|:-------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:------:|:-------:|:--------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|:-------------:|:-------------:|
-| Mask2Former | ViT-CoMer-L | [BEiTv2-L](https://pan.baidu.com/s/1A4LYOW0uljCnhX_HDXxUdQ?pwd=mxfw)                                                                                                 | 80k   | 896   | 52.7/-   |     633.6  | [config](https://pan.baidu.com/s/1ooq93rVskLe0kJj3JB5ahA?pwd=ts6k)  |[ckpt](https://pan.baidu.com/s/16fDCV4D8ldNjEUGWhh6WJA?pwd=xnjy)   |[log](https://pan.baidu.com/s/16Zi_ZA8Gi4YtVPzXNr_IrA?pwd=tdfi)|
+| Mask2Former | ViT-CoMer-L | [BEiTv2-L](https://pan.baidu.com/s/1A4LYOW0uljCnhX_HDXxUdQ?pwd=mxfw)                                                                                                 | 80k   | 896   | 52.7/-   |     633.6M  | [config](https://pan.baidu.com/s/1ooq93rVskLe0kJj3JB5ahA?pwd=ts6k)  |[ckpt](https://pan.baidu.com/s/16fDCV4D8ldNjEUGWhh6WJA?pwd=xnjy)   |[log](https://pan.baidu.com/s/16Zi_ZA8Gi4YtVPzXNr_IrA?pwd=tdfi)|
 
 
 
