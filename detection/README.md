@@ -15,6 +15,19 @@ pip install instaboostfast # for htc++
 cd ops & sh make.sh # compile deformable attention
 ```
 
+## Pretraining Sources
+
+| Name          | Type       | Year | Data         | Repo                                                                                                    | Paper                                                                                                                                                                           |
+| ------------- | ---------- | ---- | ------------ | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DeiT          | Supervised | 2021 | ImageNet-1K  | [repo](https://github.com/facebookresearch/deit/blob/main/README_deit.md)                               | [paper](https://arxiv.org/abs/2012.12877)                                                                                                                                       |
+| AugReg        | Supervised | 2021 | ImageNet-22K | [repo](https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py) | [paper](https://arxiv.org/abs/2106.10270)                                                                                                                                       |
+| BEiT          | MIM        | 2021 | ImageNet-22K | [repo](https://github.com/microsoft/unilm/tree/master/beit)                                             | [paper](https://arxiv.org/abs/2106.08254)                                                                                                                                       |
+| MAE           | MIM        | 2021 | ImageNet-1K  | [repo](https://github.com/facebookresearch/mae)                                                         | [paper](https://arxiv.org/abs/2111.06377)                                                                                                                                       |
+| Uni-Perceiver | Supervised | 2022 | Multi-Modal  | [repo](https://github.com/fundamentalvision/Uni-Perceiver)                                              | [paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Zhu_Uni-Perceiver_Pre-Training_Unified_Architecture_for_Generic_Perception_for_Zero-Shot_and_CVPR_2022_paper.pdf) |
+| BEiTv2        | MIM        | 2022 | ImageNet-22K | [repo](https://github.com/microsoft/unilm/tree/master/beit2)                                            | [paper](https://arxiv.org/abs/2208.06366)   |   
+| DINOv2        | Self-Supervised        | 2023 | LVD-142M | [repo](https://github.com/facebookresearch/dinov2)                                            | [paper](https://arxiv.org/abs/2208.06366)     |
+
+
 ## Main Results and Models
 
 **Mask R-CNN + DINOv2**
